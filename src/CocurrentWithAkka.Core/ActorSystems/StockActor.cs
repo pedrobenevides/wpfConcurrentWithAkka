@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Akka.Actor;
 using Akka.DI.Core;
 using CocurrentWithAkka.Core.ActorModels;
@@ -12,6 +13,7 @@ namespace CocurrentWithAkka.Core.ActorSystems
         private readonly HashSet<IActorRef> _subscribers;
         private readonly IActorRef _priceLookupActor;
         private decimal _stockPrice;
+        private ICancelable _priceRefreshing;
 
         public StockActor(string stockSymbol)
         {
@@ -31,6 +33,26 @@ namespace CocurrentWithAkka.Core.ActorSystems
                 foreach (var subscriber in _subscribers)
                     subscriber.Tell(stockPriceMessage);
             });
+        }
+
+        protected override void PreStart()
+        {
+            _priceRefreshing = Context.System.Scheduler
+                .ScheduleTellRepeatedlyCancelable(
+                    TimeSpan.FromSeconds(1),
+                    TimeSpan.FromSeconds(1),
+                    Self,
+                    new RefreshStockPriceMessage(_stockSymbol),
+                    Self);
+
+            base.PreStart();
+        }
+
+        protected override void PostStop()
+        {
+            _priceRefreshing.Cancel(false);
+
+            base.PostStop();
         }
     }
 }
