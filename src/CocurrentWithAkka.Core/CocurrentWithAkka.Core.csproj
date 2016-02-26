@@ -53,6 +53,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActorModels\StocksCoordinatorActor.cs" />
     <Compile Include="ActorSystems\ActorSystemReference.cs" />
     <Compile Include="ActorModels\StockPriceLookupActor.cs" />
     <Compile Include="ActorSystems\StockActor.cs" />
@@ -61,7 +62,9 @@
     <Compile Include="Messages\RefreshStockPriceMessage.cs" />
     <Compile Include="Messages\SubscribeToNewStockPriceMessage.cs" />
     <Compile Include="Messages\UnsubscribeFromNewStockPriceMessage.cs" />
+    <Compile Include="Messages\UnWatchStockMessage.cs" />
     <Compile Include="Messages\UpdatedStockPriceMessage.cs" />
+    <Compile Include="Messages\WatchStockMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RandomStockPriceServiceGateway.cs" />
   </ItemGroup>
