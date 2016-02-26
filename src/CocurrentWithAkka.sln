@@ -5,6 +5,12 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CocurrentWithAkka.Core", "CocurrentWithAkka.Core\CocurrentWithAkka.Core.csproj", "{B209D21B-D764-4F60-A664-087FEFF6ADFB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{FC36B234-7013-45C4-9B81-2E7F05A4A6CD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Core", "0 - Core", "{53C3261A-D836-442C-B5EE-53784A3D5182}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CocurrentWithAkka.Presentation", "CocurrentWithAkka.Presentation\CocurrentWithAkka.Presentation.csproj", "{6FF819BC-1677-463D-945F-1242D2E149B8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +21,16 @@ Global
 		{B209D21B-D764-4F60-A664-087FEFF6ADFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B209D21B-D764-4F60-A664-087FEFF6ADFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B209D21B-D764-4F60-A664-087FEFF6ADFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FF819BC-1677-463D-945F-1242D2E149B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FF819BC-1677-463D-945F-1242D2E149B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FF819BC-1677-463D-945F-1242D2E149B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FF819BC-1677-463D-945F-1242D2E149B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B209D21B-D764-4F60-A664-087FEFF6ADFB} = {53C3261A-D836-442C-B5EE-53784A3D5182}
+		{6FF819BC-1677-463D-945F-1242D2E149B8} = {FC36B234-7013-45C4-9B81-2E7F05A4A6CD}
 	EndGlobalSection
 EndGlobal
