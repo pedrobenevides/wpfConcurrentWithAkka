@@ -56,6 +56,7 @@
     <Compile Include="ActorSystems\ActorSystemReference.cs" />
     <Compile Include="ActorModels\StockPriceLookupActor.cs" />
     <Compile Include="ActorSystems\StockActor.cs" />
+    <Compile Include="Messages\StockPriceMessage.cs" />
     <Compile Include="Interfaces\IStockPriceServiceGateway.cs" />
     <Compile Include="Messages\RefreshStockPriceMessage.cs" />
     <Compile Include="Messages\SubscribeToNewStockPriceMessage.cs" />
